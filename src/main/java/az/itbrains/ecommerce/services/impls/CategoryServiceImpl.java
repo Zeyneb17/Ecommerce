@@ -23,6 +23,12 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<CategoryHomeDTO> getAllCategories() {
+
+        List<Category>categoryList=categoryRepository.findAll();
+
+        if(!categoryList.isEmpty()){
+            List<CategoryHomeDTO>categories=categoryList.stream().map(category -> modelMapper.map(category, CategoryHomeDTO.class)).toList();
+        }
         return List.of();
     }
 
