@@ -20,6 +20,10 @@ import lombok.experimental.FieldDefaults;
         Long id;
         String name;
 
+        boolean isFeatured;
+        boolean isHotTrend;
+        boolean isBestSeller;
+
         @ManyToOne
         SubCategory subCategory;
 }
